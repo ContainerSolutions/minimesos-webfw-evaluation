@@ -18,14 +18,14 @@ These are the results from my machine.
 ### Spark
 Executable size: 2289B
 
-Startup times: min = 485s, max = 637s, avg = 520.7s
+Startup times: min = 485ms, max = 637ms, avg = 520.7ms
 
 ### Spring
 Executable size: 12657B
 
-Startup times: min = 4183s, max = 5203s, avg = 4560.1s
+Startup times: min = 4183ms, max = 5203ms, avg = 4560.1ms
 
 ### Vert.x
 Executable size: 4358B
 
-Startup times: min = 647s, max = 883s, avg = 707.5s
+Startup times: min = 647ms, max = 883ms, avg = 707.5ms
