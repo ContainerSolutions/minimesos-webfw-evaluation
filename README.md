@@ -1,4 +1,4 @@
-This repo evaluates 3 Java web frameworks for startup time and executable size:
+This repo evaluates 3 Java web frameworks for startup time and executable size. We are going for a lightweight framework because it will be launched with every test. Memory usage was only verified manually but correlates with the executable size.
 
 * Spring Boot with Spring MVC
 * Spark
@@ -11,3 +11,18 @@ Use the command `groovy BuildAndRun.groovy` to do the full run.
 Use the command `groovy RestServerStartupTest.groovy [path_to_jar] [framework_name]` to do a single test run. The framework name is only used to print results and name the result file. E.g: `groovy RestServerStartupTest.groovy spark/target/spark-0.0.1-SNAPSHOT.jar Spark`.
 
 The result will be a csv file per framework with two columns: the size of the executable jar file and the time until startup. Of course the first column will be the same always but I didn't know any better place to put it.
+
+## Results
+These are the results from my machine.
+
+### Spark
+Executable size: 2289B
+Startup times: min=485s, max=637s, avg=520.7s
+
+### Spring
+Executable size: 12657B
+Startup times: min=4183s, max=5203s, avg=4560.1s
+
+### Vert.x
+Executable size: 4358B
+Startup times: min=647s, max=883s, avg=707.5s
