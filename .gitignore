@@ -2,3 +2,5 @@
 .vertx
 .DS_Store
 target
+*.csv
+dependency-reduced-pom.xml
