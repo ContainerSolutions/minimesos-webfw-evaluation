@@ -1,4 +1,4 @@
-package com.containersol.minivertx;
+package com.containersol.minispark;
 
 import com.google.gson.Gson;
 
