@@ -16,16 +16,17 @@ The result will be a csv file per framework with two columns: the size of the ex
 These are the results from my machine.
 
 ### Spark
-Executable size: 2289B
-
+Executable size: 2.3 MB
+Memory usage: 2.3 MB
 Startup times: min = 485ms, max = 637ms, avg = 520.7ms
 
 ### Spring
-Executable size: 12657B
+Executable size: 12657 B
 
 Startup times: min = 4183ms, max = 5203ms, avg = 4560.1ms
 
 ### Vert.x
-Executable size: 4358B
+Executable size: 4.3 MB
+Memory usage: 3.4 MB
 
 Startup times: min = 647ms, max = 883ms, avg = 707.5ms

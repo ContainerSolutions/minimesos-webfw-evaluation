@@ -30,9 +30,13 @@ public class HelloWorld extends AbstractVerticle {
 	}
 
 	private void hello(RoutingContext routingContext) {
+		Runtime runtime = Runtime.getRuntime();
+		runtime.gc();
+		long usedMemory = runtime.totalMemory() - runtime.freeMemory();
+
 		HttpServerResponse response = routingContext.response();
 		response.putHeader("Hello", "Hello there!");
-		response.putHeader("content-type", "application/json").end(Json.encodePrettily(new HelloData("p1", "p2")));
+		response.putHeader("content-type", "application/json").end(Json.encodePrettily(new HelloData("p1", "p2", usedMemory)));
 	}
 
 	private void sendError(int statusCode, HttpServerResponse response) {
