@@ -29,7 +29,7 @@ Memory usage (avg): 3.5 MB
 Startup time (avg): 0.5 s
 
 ### Spring
-Executable size: 12.6 B
+Executable size: 12.6 MB
 
 Memory usage (avg): 14.3 MB
 
