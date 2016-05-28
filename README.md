@@ -23,15 +23,21 @@ These are the results from my machine. Feel free to reproduce them on yours and 
 
 ### Spark
 Executable size: 2.3 MB
+
 Memory usage (avg): 3.5 MB
+
 Startup time (avg): 0.5 s
 
 ### Spring
 Executable size: 12.6 B
+
 Memory usage (avg): 14.3 MB
+
 Startup time (avg): 4.5 s
 
 ### Vert.x
 Executable size: 4.3 MB
+
 Memory usage (avg): 5.2 MB
+
 Startup time (avg): 0.7 s
