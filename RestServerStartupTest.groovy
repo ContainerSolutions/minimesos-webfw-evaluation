@@ -1,6 +1,11 @@
 def jarFile = args[0]
 def fw = args[1]
 
+def outFile = new File("${fw}.result.csv")
+if (!outFile.exists()) {
+	outFile << "Size (B),Memory (B),Time (ms)\n"
+}
+
 println "Starting server"
 def proc = new ProcessBuilder("java", "-jar", jarFile).redirectErrorStream(true).start()
 proc.consumeProcessOutputStream(System.out as OutputStream)
@@ -11,20 +16,22 @@ def pollingThread = new Thread({
 		try {
 			def body = new URL("http://localhost:8080/hello").text
 			println "Got response: ${body}"
-			return body.length() > 10
+			return new groovy.json.JsonSlurper().parseText(body)
 		} catch (IOException ex) {
-			return false
+			return null
 		}
 	}
-	while (!poll()) {
+	while ((resp = poll()) == null) {
 		sleep(1)
 	}
 	def time = System.currentTimeMillis() - t0
 	def size = (new File(jarFile).size() / 1024) as int
+	def mem = (resp.usedMemory / 1024) as int
 	println "StartupTime[$fw]=${time}ms"
-	println "ExecutableSize[$fw]=${size}kb"
+	println "ExecutableSize[$fw]=${size} KB"
+	println "UsedMemory[$fw]=${mem} MB"
 
-	new File("${fw}.result.csv") << "$size,$time\n"
+	outFile << "$size,$mem,$time\n"
 })
 
 try {
