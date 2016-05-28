@@ -2,7 +2,7 @@ println "Starting..."
 
 ["springboot", "spark", "vertx"].each {
 	println "building $it ..."
-	"mvn -f $it/pom.xml clean package -DskipTests".execute().waitFor()
+	"./mvnw -f $it/pom.xml clean package -DskipTests".execute().waitFor()
 }
 
 new File("").absoluteFile.listFiles().each {
