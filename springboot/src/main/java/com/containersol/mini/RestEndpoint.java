@@ -9,6 +9,10 @@ public class RestEndpoint {
 
 	@RequestMapping("hello")
 	public HelloData helloWorld() {
-		return new HelloData("p1", "p2");
+		Runtime runtime = Runtime.getRuntime();
+		runtime.gc();
+		long usedMemory = runtime.totalMemory() - runtime.freeMemory();
+
+		return new HelloData("p1", "p2", usedMemory);
 	}
 }

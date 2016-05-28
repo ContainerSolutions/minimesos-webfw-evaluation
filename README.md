@@ -22,6 +22,7 @@ Startup times: min = 485ms, max = 637ms, avg = 520.7ms
 
 ### Spring
 Executable size: 12657 B
+Memory usage: 14 MB
 
 Startup times: min = 4183ms, max = 5203ms, avg = 4560.1ms
 
