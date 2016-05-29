@@ -7,10 +7,13 @@ public class HelloWorld {
 		port(8080);
 		get("/hello", (request, response) -> {
 			response.header("Content-Type", "application/json");
-			Runtime runtime = Runtime.getRuntime();
-			runtime.gc();
-			long usedMemory = runtime.totalMemory() - runtime.freeMemory();
-			return new HelloData("param1", "param2", usedMemory);
+			return new HelloData("param1", "param2", usedMemory());
 		}, JsonUtil.json());
+	}
+
+	private static long usedMemory() {
+		Runtime runtime = Runtime.getRuntime();
+		runtime.gc();
+		return runtime.totalMemory() - runtime.freeMemory();
 	}
 }
